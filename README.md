@@ -1,2 +1,2 @@
-# ComputerGraphics
-This repository contains all my codes I wrote during my BCA degree for the subject 'Computer Graphics'.
+# Computer Graphics
+This repository contains all the algorithms I wrote during my BCA degree for the subject 'Computer Graphics' using C++.
