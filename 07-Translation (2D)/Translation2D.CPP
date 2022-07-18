@@ -1,0 +1,49 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<conio.h>
+
+int n, x[100], y[100], i, tx, ty;
+
+void draw()
+{
+    for(i=0; i<n; i++)
+    {
+	    line(x[i], y[i], x[(i+1)%n], y[(i+1)%n]);
+    }
+}
+
+void translate()
+{
+    for(i=0; i<n; i++)
+    {
+        x[i] += tx;
+        y[i] += ty;
+    }
+}
+
+void main()
+{
+    clrscr();
+    int gd = DETECT, gm;
+    cout<<"Enter no. of sides = ";
+    cin>>n;
+    cout<<"Enter (x,y) coordinates for each side = ";
+    for(i=0; i<n; i++)
+    {
+	cin>>x[i]>>y[i];
+    }
+
+    cout<<"Enter translation factors (Tx, Ty) = ";
+    cin>>tx>>ty;
+
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    setcolor(BLUE);
+    draw();             //original object
+    translate();
+
+    setcolor(RED);
+    draw();             //object after translation
+
+    getch();
+}
